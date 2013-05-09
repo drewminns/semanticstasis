@@ -27,10 +27,24 @@ body {
   text-rendering: optimizelegibility;
 }
 
-nav {
+header, footer {
+  @include column(12);
+  margin-bottom: 25px;
+}
+
+#main {
+  width: 100%;
+}
+
+.full {
   display: block;
+  float: left;
+  width: 100%;
+}
+
+nav {
+  @include column(8);
   ul {
-    background: $light-gray;
     margin: 0;
     padding: 15px 10px;
     li {
@@ -40,19 +54,91 @@ nav {
   }
 }
 
-#main {
+#logo {
+  @include column(4);
+}
+
+.wrapper, .content {
+  @include column(12);
+  margin-bottom: 25px;
+}
+
+section#image {
+  @include column(7);
+  height: 500px;
+  background: blue;
+}
+
+sidebar#description {
+  @include column(5);
+  height: 500px;
+  background: lime;
+}
+
+
+
+#items {
+  display: block;
+  float: left;
   width: 100%;
+  ul {
+    li {
+      @include column (3);
+      padding: 25px 0px;
+      background: #ccc;
+      margin-bottom: 25px;
+    }
+  }
 }
 
-header, footer {
-  @include column(12);
-}
-.full {
-  @include column(12);
-}
 
-.wrapper {
-  @include column(12);
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media screen and (max-width: 720px) {
+
+  nav {
+    @include column(12);
+    ul {
+      margin: 0;
+      padding: 15px 10px;
+      li {
+        display: inline;
+        margin-right: 25px;
+      }
+    }
+  }
+
+  #logo {
+    @include column(12);
+  }
+
+  #items {
+    display: block;
+    float: left;
+    width: 100%;
+    ul {
+      li {
+        @include column (6);
+        padding: 25px 0px;
+        background: #ccc;
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  section#image {
+    @include column(12);
+    height: 300px;
+    background: blue;
+  }
+
+  sidebar#description {
+    @include column(12);
+    height: 100px;
+    background: lime;
+  }
 }
 
 
