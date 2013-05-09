@@ -1,0 +1,19 @@
+.field.field-text
+  %label{:for => "last_name"} Text Input
+  %input#last_name{:type => "text", :placeholder => "Placeholder Text"}
+.field.field-text
+  %label{:for => "last_name"} Textarea
+  %textarea#last_name{:placeholder => "Placeholder Text"}
+.field.field-select
+  %label{:for => "province"} Province
+  %select#province
+    %option{:value => "AB"} Alberta
+.field.field-checkbox
+  %input#share{:type => "checkbox"}
+  %label{:for => "share"} Share with friends
+.field.field-submit
+  %input{"data-disable-with" => "Submitting…", :type => "submit", :value => "Submit"}
+Rails should add a "field_with_errors" class to the wrapper div, like this:
+.field.field-text.field_with_errors
+  %label{:for => "last_name"} Last Name
+  %input#last_name{:type => "text"}

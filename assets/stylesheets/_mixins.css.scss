@@ -1,0 +1,153 @@
+// -------------------------
+// Border-Box
+// --------
+// For making elements respond like you'd expect them to.
+@mixin border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+// -------------------------
+// Pre-Fix
+// --------
+/* generically prefix any property name */
+@mixin prefix($name, $value) {
+	-webkit-#{$name}: $value;
+	-moz-#{$name}: $value;
+	-ms-#{$name}: $value;
+	-o-#{$name}: $value;
+	#{$name}: $value;
+}
+
+// -------------------------
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+@mixin clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// -------------------------
+// IE7 inline-block
+// ----------------
+@mixin ie7-inline-block() {
+  *display: inline; /* IE7 inline-block hack */
+  *zoom: 1;
+}
+
+// -------------------------
+// Overlay
+// -------------------------
+@mixin overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+// -------------------------
+// Placeholder text
+// -------------------------
+@mixin placeholder($color: $placeholderText) {
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+// -------------------------
+// Button Build
+// -------------------------
+@mixin button {
+  display: inline-block;
+  margin: 0;
+  padding: 5px 10px;
+  border: 3px solid $purple;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: $purple;
+  background-image: linear-gradient(top, $light-purple 6%, $purple 50%);
+  background-image: -o-linear-gradient(top, $light-purple 6%, $purple 50%);
+  background-image: -moz-linear-gradient(top, $light-purple 6%, $purple 50%);
+  background-image: -ms-linear-gradient(top, $light-purple 6%, $purple 50%);
+  background-image: -webkit-linear-gradient(top, $light-purple 6%, $purple 50%);
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.06, $light-purple),
+    color-stop(0.5, $purple)
+  );
+  color: #FFF;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  &:hover,
+  &:focus {
+    background-image: linear-gradient(top, $light-purple 6%, $purple 100%);
+    background-image: -o-linear-gradient(top, $light-purple 6%, $purple 100%);
+    background-image: -moz-linear-gradient(top, $light-purple 6%, $purple 100%);
+    background-image: -ms-linear-gradient(top, $light-purple 6%, $purple 100%);
+    background-image: -webkit-linear-gradient(top, $light-purple 6%, $purple 100%);
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0.06, $light-purple),
+      color-stop(1, $purple)
+    );
+  }
+}
+
+@mixin hide-text {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+}
+
+// @include x-linear-gradient("to bottom", #ccc, #ddd, #bbb);
+
+// -------------------------
+// Generates transitions on a given element
+@mixin transition($property: all, $duration: 0.2s, $timing: linear) {
+	-webkit-transition: #{$property} $duration $timing;
+	-moz-transition: #{$property} $duration $timing;
+	-ie-transition: #{$property} $duration $timing;
+	-o-transition: #{$property} $duration $timing;
+	transition: $property $duration $timing;
+}
+
+
+// -------------------------
+//  Rounded Corners
+/* for border-radius, named to be consistent with roundedcorner */
+@mixin rounded($radius: 6px) {
+	        border-radius: $radius;
+	   -moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+}

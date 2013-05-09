@@ -1,0 +1,31 @@
+// Brand fonts
+
+$bodyFontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$headerFontFamily: Georgia, "Times New Roman", Times, serif !default;
+
+$base-font: $bodyFontFamily;
+$base-font-size: 14px !default;
+$base-font-height: 20px !default;
+$base-font-colour: #333;
+
+
+// Brand Colours
+$red: #cd1c22;
+$purple: #5b2a7c;
+$light-purple: #b29dcb;
+$gray: #303030;
+$light-gray: #dfdfdf;
+$inputBackground: #eeeeee;
+
+$placeholderText: darken( $light-gray, 20% );
+
+$error-color: $red;
+$error-background-color: #ffdfdf;
+
+
+// Typography
+
+$headings-Font-Weight: 700;
+$base-Line-Height: 21px;
+$headings-Colour: #333;
+$link-Colour: #0088cc;

@@ -1,0 +1,9 @@
+en:
+
+  meta:
+    title: "Page Meta Title"
+    site_name: "Page Meta Site Name"
+    descript: "Page Meta Description"
+
+  global:
+    header: "Test Locale Copy"

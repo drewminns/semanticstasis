@@ -1,0 +1,137 @@
+@import '_brand_defaults.css.scss';
+
+// Body text
+// -------------------------
+
+p {
+  font-family: $base-font;
+  margin: 0 0 $base-Line-Height / 2;
+  font-weight: 400;
+}
+.lead {
+  margin-bottom: $base-Line-Height;
+  font-size: $base-font-size * 1.5;
+  font-weight: 200;
+  line-height: $base-Line-Height * 1.5;
+}
+
+// Emphasis & misc
+// -------------------------
+
+// Ex: 14px base font * 85% = about 12px
+small   { font-size: 85%; }
+strong  { font-weight: bold; }
+em      { font-style: italic; }
+cite    { font-style: normal; }
+
+
+// Links
+// --------------------
+
+a {
+  color: $link-Colour;
+  text-decoration: none;
+  &:hover {
+    color: darken( $link-Colour, 10% );
+    text-decoration: underline;
+  }
+}
+
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headerFontFamily;
+  font-weight: $headings-Font-Weight;
+  line-height: $base-Line-Height;
+  color: $headings-Colour;
+  text-rendering: optimizelegibility; // Fix the character spacing for headings
+  small {
+    font-weight: normal;
+    line-height: 1;
+  }
+}
+
+h1, h2, h3 {
+  line-height: $base-Line-Height * 2;
+}
+
+h1 {
+  font-size: $base-font-size * 2.75;
+}
+h2 {
+  font-size: $base-font-size * 2.25;
+}
+h3 {
+  font-size: $base-font-size * 1.75;
+}
+h4 {
+  font-size: $base-font-size * 1.25;
+}
+h5 {
+  font-size: $base-font-size;
+}
+h6 {
+  font-size: $base-font-size * 0.85;
+}
+
+h1 small {
+  font-size: $base-font-size * 1.75;
+}
+h2 small {
+  font-size: $base-font-size * 1.25;
+}
+h3 small {
+  font-size: $base-font-size;
+}
+h4 small {
+  font-size: $base-font-size;
+}
+
+
+// Page header
+// -------------------------
+
+.page-header {
+  padding-bottom: ($base-Line-Height / 2) - 1;
+  margin: $base-Line-Height 0 ($base-Line-Height * 1.5);
+  border-bottom: 1px solid #000;
+}
+
+// Lists
+// --------------------------------------------------
+
+// Unordered and Ordered lists
+ul, ol {
+  padding: 0;
+  margin: 0 0 $base-Line-Height / 2 25px;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+li {
+  line-height: $base-Line-Height;
+}
+
+// Remove default list styles
+ul.unstyled,
+ol.unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+
+// Single-line list items
+ul.inline,
+ol.inline {
+  margin-left: 0;
+  list-style: none;
+  > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}

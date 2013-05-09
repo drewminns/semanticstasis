@@ -1,0 +1,74 @@
+@charset "UTF-8";
+@import '_brand_defaults.css.scss';
+@import '_mixins.css.scss';
+@import '_typography.css.scss';
+@import '_forms.css.scss';
+
+/* ==========================================================================
+   Structure
+   ========================================================================== */
+
+body {
+  font-family: $base-font;
+  font-size: $base-font-size;
+  color: $base-font-colour;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
+
+nav {
+  display: block;
+  ul {
+    background: $light-gray;
+    margin: 0;
+    padding: 15px 10px;
+    li {
+      display: inline;
+      margin-right: 25px;
+    }
+  }
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}

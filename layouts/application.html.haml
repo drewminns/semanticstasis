@@ -1,0 +1,59 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %title= t('meta.title')
+    %meta{:description => t('meta.title')}
+    %meta{:property => "og:title", :content => t('meta.title')}
+    %meta{:property => "og:site_name", :content => t('meta.site_name')}
+    %meta{:property => "og:type", :content => "website"}
+    %meta{:property => "og:url", :content => "test"}
+    %meta{:property => "og:image", :content =>  "test"}
+    %meta{:property => "og:description", :content => t('meta.descript')}
+    %meta{:property => "fb:app_id",:content => "test"}
+    %meta{:name => "twitter:card", :content => "summary"}
+    %meta{:name => "twitter:title", :content => t('meta.title')}
+    %meta{:name => "twitter:description", :content => t('meta.descript')}
+
+    / Main Stylesheet
+    %link{:href => "assets/stylesheets/normalize.css", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "assets/stylesheets/main.css", :rel => "stylesheet", :type => "text/css"}
+
+    / jQuery CDN and Local Fallback
+    %script{ :src => "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
+    :javascript
+      window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.9.1.min.js"><\/script>')
+
+    %script{ :src => "assets/javascripts/application.js" }
+    %script{ :src => "assets/javascripts/facebook.js" }
+    %script{ :src => "assets/vendors/javascripts/modernizr.js" }
+
+    / TypeKit
+    %script{ :src => "//#TYPEKIT_ID" }
+    :javascript
+      try{Typekit.load();}catch(e){}
+      WebFontConfig = { fontdeck: { id: '#TYPEKIT_ID' } };
+
+    /[if lte IE 9]
+      %link{:href => "assets/stylesheets/ie9.css", :rel => "stylesheet", :type => "text/css" }
+    /[if lt IE 9]
+      %link{:href => "assets/stylesheets/ie8.css", :rel => "stylesheet", :type => "text/css" }
+      %script{:src => "assets/javascripts/html5shiv.js"}
+    /[if lt IE 8]
+      %link{:href => "assets/stylesheets/ie7.css", :rel => "stylesheet", :type => "text/css" }
+
+    / Google Analytics
+    = render "partials/_analytics.html.haml"
+
+  %body{ :class => @page_name }
+    = render "partials/_facebook.html.haml"
+
+    = render "partials/_header.html.haml"
+    #main
+      = yield
+    = render "partials/_footer.html.haml"
+
+
+
