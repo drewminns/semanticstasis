@@ -1,12 +1,23 @@
 @charset "UTF-8";
 @import '_brand_defaults.css.scss';
 @import '_mixins.css.scss';
+@import '_grid.scss';
 @import '_typography.css.scss';
 @import '_forms.css.scss';
 
 /* ==========================================================================
    Structure
    ========================================================================== */
+
+// Specify the number of columns and set column and gutter widths
+$columns: 12;
+$column-width: 60;
+$gutter-width: 20;
+
+// Remove the definition below for a pixel-based layout
+$total-width: 100%;
+
+
 
 body {
   font-family: $base-font;
@@ -28,6 +39,23 @@ nav {
     }
   }
 }
+
+#main {
+  width: 100%;
+}
+
+header, footer {
+  @include column(12);
+}
+.full {
+  @include column(12);
+}
+
+.wrapper {
+  @include column(12);
+}
+
+
 
 
 /* ==========================================================================

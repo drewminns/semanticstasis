@@ -22,9 +22,10 @@ helpers do
   end
 end
 
-ignore %r(assets/css/_brand_defaults.css)
-ignore %r(assets/css/_mixins.css)
-ignore %r(assets/css/_typography.css)
-ignore %r(assets/css/_forms.css)
+ignore %r(assets/css/_brand_defaults.css.scss)
+ignore %r(assets/css/_mixins.css.scss)
+ignore %r(assets/css/_typography.css.scss)
+ignore %r(assets/css/_forms.css.scss)
+ignore %r(assets/css/_grid.scss)
 ignore %r(partials/*)
 ignore %r(locales)

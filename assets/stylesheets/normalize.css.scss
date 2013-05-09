@@ -1,26 +1,13 @@
+@import '_mixins.css.scss';
 //
 // Reset CSS
 // Adapted from http://github.com/necolas/normalize.css
 // --------------------------------------------------
 
-@mixin tab-focus() {
-  // Default
-  outline: thin dotted #333;
-  // Webkit
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-
-// Box sizing
-@mixin box-sizing($boxmodel) {
-  -webkit-box-sizing: $boxmodel;
-     -moz-box-sizing: $boxmodel;
-          box-sizing: $boxmodel;
-}
 
 // Display in IE6-9 and FF3
 // -------------------------
-
+html, body, div,
 article,
 aside,
 details,
@@ -32,6 +19,7 @@ hgroup,
 nav,
 section {
   display: block;
+  margin: 0;
 }
 
 // Display block in IE6-9 and FF3
@@ -60,10 +48,7 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
-// Focus states
-a:focus {
-  @include tab-focus();
-}
+
 // Hover & Active
 a:hover,
 a:active {
@@ -147,7 +132,6 @@ input[type="checkbox"] {
     cursor: pointer; // Improves usability and consistency of cursor style between image-type `input` and others.
 }
 input[type="search"] { // Appearance in Safari/Chrome
-  @include box-sizing(content-box);
   -webkit-appearance: textfield;
 }
 input[type="search"]::-webkit-search-decoration,
